@@ -1,0 +1,11 @@
+.article-card{
+	width: 250px;
+}
+.article-card img {
+	width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.article-card img:hover {
+  transform: scale(1.1);
+}

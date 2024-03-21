@@ -1,25 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
+import { getArticles, getSourceArticles } from '../../ApiCalls';
+import { testArticles } from '../../testData';
+import { Route, Routes } from 'react-router-dom';
+import Article from '../Article/Article';
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [articles, setArticles] = useState([]);
+	const [selectedSource, setSelectedSource] = useState('');
+
+	const getBaselineArticles = () => {
+		getArticles()
+			.then(data => data.json())
+			.then(data => setArticles(data.articles))
+	}
+
+	const handleSourceButtonClick = (source) => {
+		setSelectedSource(source);
+		getSourceArticles(source)
+			.then(data => data.json())
+			.then(data => setArticles(data.articles))
+	}
+
+	useEffect(() => {
+		getBaselineArticles();
+	}, [])
+
+
+	return (
+		<div className="App">
+			<header>
+				<h1>The Compendiunm</h1>
+			</header>
+			<nav>
+				<button className='nav-button' onClick={() => getBaselineArticles()}>Home</button>
+				<button className='nav-button' onClick={() => handleSourceButtonClick('bbc')}>BBC</button>
+				<button className='nav-button' onClick={() => handleSourceButtonClick('NBC')}>NBC</button>
+				<button className='nav-button' onClick={() => handleSourceButtonClick('abc')}>ABC</button>
+			</nav>
+			<main>
+				<Article articles={articles} />
+			</main>
+		</div>
+	);
 }
 
 export default App;
