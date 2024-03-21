@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# The Compendium
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This application was designed and built within a 8 hour period. This application uses the [News API](https://newsapi.org/), an open source api, to see, view, and read various news articles from a variety of sources. Simple loading the application gets a list of articles for the viewer to read. 
 
-In the project directory, you can run:
+By default the user is presented news from all sources. At the top of the webpage, a user can choose to filter news based on their sources, including BBC, NBC, and ABC. 
 
-### `npm start`
+If a user wishes to see more in depth information about an article, they can click on the image in the article card. Upon clicking the image, a modal appears, that displayes more in depth infromation about the article, as well as a hyperlink to the main webpage for the article. users can exit this modal to go back to the homepage. 
 
-Runs the app in the development mode.\
+### Running this application
+
+To use this application, do the following steps:
+
+1. Clone this repository
+2. run 'npm install'
+3. run 'npm start'
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### My thoughts about potential improvements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+My main goal was to complete the MVP requirements as quickly as possible, considering the time frame was only 8 hours. The main challenge I had in this project was I didn't give myself enough time for me to style the webpage the way I wanted. The webpage is readable, but not nice the interact with. Additionally, I didn't incorperate React Router into my application, mainly due to time constraints, which is something I want to add in the future. 
 
-### `npm run build`
+Furthermore, the way the I have article information stored would have to be refactored in order to make sure that Router would displayed the correct information, should you move between webpages. I could set it up in a way that all of the sources fetch their respective articles at the start of the webpage loading, then display them when they are clicked on.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
